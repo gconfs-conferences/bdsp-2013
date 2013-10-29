@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyan", "BDSP\BDSP\Nyan.csproj", "{9BCCD0AE-ADC2-45D5-8141-67412A067733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanContent", "BDSP\BDSPContent\NyanContent.contentproj", "{8A00DB53-2A4B-452E-87C1-5DEEA1B1E08A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structure", "Structure\Structure\Structure.csproj", "{535DF85B-299A-4499-9B6F-238801C96172}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "StructureContent", "Structure\StructureContent\StructureContent.contentproj", "{AF745591-010C-49FF-8C18-EA871AA64BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract", "Abstract\Abstract.csproj", "{FE1CFA80-9F31-4A53-BF7B-EF6BC19EE006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BCCD0AE-ADC2-45D5-8141-67412A067733}.Debug|x86.ActiveCfg = Debug|x86
+		{9BCCD0AE-ADC2-45D5-8141-67412A067733}.Debug|x86.Build.0 = Debug|x86
+		{9BCCD0AE-ADC2-45D5-8141-67412A067733}.Release|x86.ActiveCfg = Release|x86
+		{9BCCD0AE-ADC2-45D5-8141-67412A067733}.Release|x86.Build.0 = Release|x86
+		{8A00DB53-2A4B-452E-87C1-5DEEA1B1E08A}.Debug|x86.ActiveCfg = Debug|x86
+		{8A00DB53-2A4B-452E-87C1-5DEEA1B1E08A}.Release|x86.ActiveCfg = Release|x86
+		{535DF85B-299A-4499-9B6F-238801C96172}.Debug|x86.ActiveCfg = Debug|x86
+		{535DF85B-299A-4499-9B6F-238801C96172}.Debug|x86.Build.0 = Debug|x86
+		{535DF85B-299A-4499-9B6F-238801C96172}.Release|x86.ActiveCfg = Release|x86
+		{535DF85B-299A-4499-9B6F-238801C96172}.Release|x86.Build.0 = Release|x86
+		{AF745591-010C-49FF-8C18-EA871AA64BFD}.Debug|x86.ActiveCfg = Debug|x86
+		{AF745591-010C-49FF-8C18-EA871AA64BFD}.Release|x86.ActiveCfg = Release|x86
+		{FE1CFA80-9F31-4A53-BF7B-EF6BC19EE006}.Debug|x86.ActiveCfg = Debug|x86
+		{FE1CFA80-9F31-4A53-BF7B-EF6BC19EE006}.Debug|x86.Build.0 = Debug|x86
+		{FE1CFA80-9F31-4A53-BF7B-EF6BC19EE006}.Release|x86.ActiveCfg = Release|x86
+		{FE1CFA80-9F31-4A53-BF7B-EF6BC19EE006}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
