@@ -36,3 +36,4 @@ UpgradeLog*.XML
 *.xdy
 *.tdo
 *.pdf
+*.pyg
