@@ -1,8 +1,8 @@
 all:
-	xelatex src.tex && xelatex src.tex && evince src.pdf
+	xelatex --shell-escape src.tex
 
 run:
-	xelatex src.tex && xelatex src.tex && evince src.pdf
+	evince src.pdf
 
 clean:
-	rm *.aux *.pdf *.nav *.toc *.log *.out *.snm
+	rm *.aux *.pdf *.nav *.toc *.log *.out *.snm *.vrb
