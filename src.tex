@@ -344,7 +344,8 @@ On peut considérer qu'une pièce est un ensemble de 3 blocs. Chaque bloc a des
 coordonnées qui lui sont propres sur la map, soit un couple $(x,y)$. \\
 
 Pour plus de clarté, on va déclarer une structure (si vous ne savez pas ce que
-c'est, considérez que c'est comme une classe) : \\
+c'est, considérez que c'est un peu comme les enregistrements en OCaml. Si vous
+ne voyez toujours pas, considérez que c'est une classe) : \\
 
 \begin{csharpcode*}{label=Piece.cs}
 public class Piece
@@ -479,10 +480,6 @@ public class Game1
 {
     ...
 
-    // On va avoir besoin de compter le nombre de fois qu'on passe sur la
-    // fonction Update(), pour bouger la pièce automatiquement vers le bas
-    // à partir d'un certain nombre de fois.
-    private int _timer;
 
     // On va mettre notre plateau de jeu ici :)
     private Plate _plate;
@@ -495,6 +492,16 @@ public class Game1
     enum GameState { Running, GameOver }
 
     private GameState _gameState;
+    
+    // La fonction Update() de notre classe principale tourne en boucle un
+    // nombre fini de fois par seconde. On veut que notre pièce descende de
+    // manière constante.
+    // On va avoir besoin de compter le nombre de fois qu'on passe sur la
+    // fonction Update(), pour bouger la pièce automatiquement vers le bas
+    // à partir d'un certain nombre de fois. (Si on le fait à chaque Update()
+    // ça le fera plusieurs fois par seconde et c'est beaucoup trop. On veut
+    // contrôler ça)
+    private int _timer;
 
     ...
 }
@@ -572,7 +579,7 @@ public class Game1
         //          on la descend.
         //       Sinon, on bloque la pièce, on vérifie qu'il n'y a pas de ligne
         //          pleine. Si c'est le cas on les explose (récursivement, il peut
-        //          y avoir plusieurs lignes pleine en même temps (max 3)
+        //          y avoir plusieurs lignes pleines en même temps (max 3)
         //       Et on vérifie que la partie n'est pas terminée. Si c'est le cas
         //          on passe _gameState à GameState.GameOver
     }
@@ -626,7 +633,9 @@ amuser à implémenter ces quelques fonctionnalités supplémentaires :
 
 \section{Conclusion}
 
-\emph{In GConfs You Trust.}
+\emph{Avec GConfs, GConfiance !} \\
+
+Ceci était un sujet de TP avec des jeux de mots débiles. :)
 
 %
 

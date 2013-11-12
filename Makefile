@@ -5,4 +5,4 @@ run:
 	evince src.pdf
 
 clean:
-	rm *.aux *.pdf *.nav *.toc *.log *.out *.snm *.vrb *.pyg
+	rm *.aux *.nav *.toc *.log *.out *.snm *.vrb *.pyg
