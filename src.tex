@@ -93,20 +93,20 @@ aider. Alors n'hésitez pas à leur demander.}
 
 \begin{enumerate}
     \item Commencez par tous vous inscrire sur \url{https://bitbucket.org} ou
-    \url{http://github.com} (mais tous les membres au même endroit sinon ça va
-    pas le faire). \\
+    \url{http://github.com} (mais essayez que tous les membres de votre équipe
+    s'inscrivent au même endroit, plus simple). \\
     Ces deux sites permettent à des développeurs d'héberger leurs dépôts Git, et ce
     gratuitement.\\
     \textbf{Attention} : GitHub ne permet pas de faire de dépôt privé
-    de base; il faut un compte étudiant. Préférez BitBucket si vous n'êtes pas
-    quelqu'un d'opensource.\\
+    de base; il faut un compte étudiant. Préférez BitBucket si vous voulez
+    pouvoir créer des dépôts privés. \\
 
     {\color{red} \textbf{Attention} : \\Les étapes \textbf{2} et \textbf{3}
     sont faites par une seule personne. Choisissez la. Les autres regardent et
     l'aident.}\\
 
     \item L'heureux élu se rend donc sur le site que vous avez choisi et créé un
-    nouveau dépôt (en général y'a un gros bouton pour ça, vous allez y arriver). \\
+    nouveau dépôt. \\
 
     \item Cette même personne créé un nouveau projet XNA sur VS.
 \end{enumerate}
@@ -125,11 +125,10 @@ Expliquer comment utiliser l'extension pour commit, push etc.
 pièce devient bloquée, on en fait apparaître une nouvelle qui subira le même
 sort que la précédente.
 
-\newpage
 \section{Liste des fonctionnalités à implémenter}
 
 \begin{enumerate}
-    \item TexturesManager : charger les textures à dessiner
+    \item TextureManager : charger les textures à dessiner
     \item Plateau de jeu (map sur laquelle les pièces se déplaceront)
     \item Pièce (composée de 3 cases)
         \begin{enumerate}
@@ -145,6 +144,8 @@ sort que la précédente.
         \end{enumerate}
 \end{enumerate}
 
+\textbf{Répartissez vous les tâches, et c'est parti !}
+
 \begin{center}
     {\large\color{red} Pour vous aider, la partie \textbf{5} vous explique
     comment implémenter chaque fonctionnalité. Vous n'êtes pas obligés de vous
@@ -154,7 +155,7 @@ sort que la précédente.
 
 \section{Les images du jeu sont fournies !}
 
-Pour les téléchargez, rendez vous ici : \url{http://too.gy/bdsp/tp.zip}. \\
+Pour les télécharger, rendez vous ici : \url{http://too.gy/bdsp/tp.zip}. \\
 
 \begin{itemize}
     \item[\textbf{GameBackground.png}]: image de fond du jeu, avec le plateau. On affichera
@@ -170,7 +171,22 @@ Pour les téléchargez, rendez vous ici : \url{http://too.gy/bdsp/tp.zip}. \\
 
 \section{Comment implémenter tout ça}
 
-\subsection{TexturesManager : chargement des textures}
+Notre projet va contenir 4 classes : \\
+
+\begin{itemize}
+    \item[\textbf{Game1}] est la classe créée par XNA, elle est déja présente
+        dans le projet. Elle contient les fonctions d'initialisation, de
+        chargement du contenu et les fonctions principales de notre jeu, qui
+        tournent en boucle ( Draw() et Update() ).
+    \item[\textbf{TextureManager}] est la classe qui va s'occuper de charger
+        et de contenir nos textures.
+    \item[\textbf{Plate}] est la classe qui représentera notre plateau de jeu
+        (la map avec des cases sur laquelle nos pièces vont se placer).
+    \item[\textbf{Piece}] est la classe qui représentera notre pièce. Cette
+        pièce prendra une forme aléatoire parmi les 6 possibles.
+\end{itemize}
+
+\subsection{TextureManager : chargement des textures}
 
 On va commencer par charger nos textures dans notre jeu. Comme ça ce sera fait
 et on y aura accès par la suite. \\
@@ -189,15 +205,18 @@ Ce qu'on va faire, c'est créer une sorte de 'service', une classe statique qui
 va contenir nos textures, à laquelle on aura accès depuis n'importe quelle
 classe de notre solution (projet). \\
 
-\begin{csharpcode*}{label=TexturesManager.cs}
+\begin{csharpcode*}{label=TextureManager.cs}
 // ATTENTION au mot clef 'static'
-public static class TexturesManager
+public static class TextureManager
 {
+    // Déclaration des textures
     public static Texture2D GameBackground,
                             GameOver,
                             Piece,
                             PieceBlocked;
-
+    
+    /* On déclare une fonction qui va charger nos textures et qu'on appellera
+       au lancement du jeu */
     public static void LoadContent(ContentManager content)
     {
         // TODO: Charger les 4 textures
@@ -207,16 +226,20 @@ public static class TexturesManager
 
 \vspace{0.2cm}
 
-Il faut appeler la fonction LoadContent de notre TexturesManager depuis la
+Il faut appeler la fonction LoadContent de notre TextureManager depuis la
 classe principale 'Game1', dans sa propre fonction LoadContent : \\
 
 \begin{csharpcode*}{label=Game1.cs}
-protected override void LoadContent()
+public class Game1
 {
-    IsMouseVisible = true;
-    spriteBatch = new SpriteBatch(GraphicsDevice);
+    protected override void LoadContent()
+    {
+        ...
 
-    TexturesManager.LoadContent(Content);
+        TextureManager.LoadContent(Content);
+        
+        ...
+    }
 }
 \end{csharpcode*}
 
@@ -225,7 +248,7 @@ On peut maintenant accéder à nos 4 textures depuis n'importe quelle classe de
 la façon suivante : \\
 
 \begin{csharpcode}
-TexturesManager.NomDeLaTexture;
+TextureManager.NomDeLaTexture;
 \end{csharpcode}
 
 \subsection{Plateau de jeu}
@@ -245,8 +268,8 @@ Pour chaque case on a envie de savoir si la case est occupée par soit :
 (on différencie pièce bloquée et non-bloquée car on veut les afficher
 différemment). \\
 
-Le plus simple c'est de représenter les cases notre plateau par un tableau de
-bytes : \\
+Le plus simple c'est de représenter les cases notre plateau par une matrice (ou
+tableau à deux dimensions) de bytes : \\
 
 \begin{csharpcode*}{label=Plate.cs}
 public class Plate
@@ -260,7 +283,7 @@ public class Plate
 Pour accéder à une case de notre plateau, il suffit alors de faire : \\
 
 \begin{csharpcode}
-Plate p = new Plate();
+Plate p = new Plate(); // instanciation d'un plateau de jeu
 
 byte b = p.Cells[0,0]; // récupère la case tout en haut à gauche
 \end{csharpcode}
@@ -272,7 +295,7 @@ Pour parcourir l'ensemble de nos cases, il suffit de faire : \\
 \begin{csharpcode}
 for (int x = 0; x < 10; x++)
 {
-    for (int y = 0; y < 22; x++)
+    for (int y = 0; y < 22; y++)
     {
         // Valeur de la case =  p.Cells[x,y]
     }
@@ -509,6 +532,11 @@ public class Game1
 
 \subsubsection{Initialisation du jeu}
 
+Au lancement du jeu, on va instancier nos objets, créer tous ce dont nous
+allons avoir besoin par la suite. On va passer l'état du jeu à 'Running', car
+c'est le cas et on va redimentionner la fenêtre pour que ça corresponde à la
+taille de notre image GameBackground. \\
+
 \begin{csharpcode*}{label=Game1.cs}
 public class Game1
 {
@@ -529,8 +557,8 @@ public class Game1
         graphics.ApplyChanges();
 
         // TODO: Récupérer l'état courant du clavier dans _pKs et _cKs
-
-        base.Initialize();
+        
+        ...
     }
 
     ...
@@ -548,8 +576,7 @@ public class Game1
 
     private bool IsGameOver()
     {
-        // TODO: vérifier les bytes de la map pour savoir si la partie est
-        //       terminée
+        // TODO: renvoie vrai si la partie est terminée, faux sinon.
     }
     
     ...
