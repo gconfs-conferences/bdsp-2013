@@ -10,7 +10,6 @@
 
 \usepackage{url}
 \usepackage{hyperref}
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
@@ -86,7 +85,7 @@ les bases d'\textbf{XNA}.
 
 \begin{center}\noindent\rule{12cm}{0.4pt}\end{center}
 
-\section{Création du dépôt Git et du projet XNA}
+\section{Création du  dépôt Git et du projet XNA}
 
 \noindent{\color{red} Si vous êtes bloqué à une étape, les assistants sont là pour vous
 aider. Alors n'hésitez pas à leur demander.}
@@ -106,14 +105,121 @@ aider. Alors n'hésitez pas à leur demander.}
     l'aident.}\\
 
     \item L'heureux élu se rend donc sur le site que vous avez choisi et créé un
-    nouveau dépôt (en général y'a un gros bouton pour ça, vous allez y arriver). \\
+    nouveau dépôt (en général y'a un gros bouton pour ça, vous allez y
+    arriver). Editez les r\'eglages de votre d\'epôt pour ajouter vos
+    co\'equipi\'es et donnez leur au moins le droit d'\'ecriture, voire les
+    droits admins si vous êtes de bonne humeur. \\
 
     \item Cette même personne créé un nouveau projet XNA sur VS.
 \end{enumerate}
 
-\% \textbf{TODO}: Corwin doit rajouter des étapes pour l'extension Git de VS
-À la fin, ils sont tous sensés avoir le nouveau projet sur leur VS. \\
-Expliquer comment utiliser l'extension pour commit, push etc.
+\% \textbf{Git Extension in Visual Studio 2010}:\\
+\begin{enumerate}
+    \item Commencez par installer le plugin Git Extension pour Visual Studio 2010 si
+celui-ci n'est pas d\'ejà install\'e. Vous devriez avoir ceci dans votre barre
+de menus :
+\begin{center}
+    \includegraphics{img/VS_git.png}
+\end{center}
+\\
+    \item Ensuite cr\'eez un d\'epôt local vide. Pour celà, allez dans
+	\textbf{\emph{Git
+	>> Initialize new repository}}. \\
+Une fenêtre telle que celle-ci devrait s'afficher :\\ 
+\\
+
+\begin{center}
+    \includegraphics{img/VS_new_repo.png}\\ 
+\end{center}
+\\
+Indiquez le chemin vers le dossier de votre projet et cliquez sur
+\textbf{\emph{Initialize}}.\\
+\\ 
+    \item Maintenant configurez le d\'epôt distant : Allez dans \textbf{\emph{Git >>
+	Manage remote repositories}}, et indiquez le nom du d\'epôt ainsi que
+	son url dans la fenêtre suivante : \\
+    \begin{center}
+	\includegraphics[scale=0.85]{img/VS_manage_remote.png} \\
+    \end{center}
+    Cliquez sur \textbf{\emph{Save}} puis fermez la fenêtre. \\
+    \\
+ 
+     \item Vous allez maintenant effectuer votre premier commit. Pour celà,
+	 allez dans \textbf{\emph{Git >> Commit}}. Vous devriez obtenir une fenêtre
+	similaire à celle-ci : \\
+	\begin{center}
+	    \includegraphics[scale=0.58]{img/VS_commit.png}
+	\end{center}
+	\\
+	Choisissez les fichiers que vous voulez commit en les s\'electionnants
+	et en cliquant sur \textbf{\emph{Stage}}. 
+	\\
+	Entrez un message de commit, ce message sera affich\'e avec le commit dans votre repo, il vous permet d'indiquer quels sont les changements apport\'es à votre projet depuis le dernier commit. 
+	\\
+	Comme il s'agit ici du premier commit de votre projet, vous
+pouvez mettre ce que vous voulez en message. 
+\\
+Cette fenêtre comporte aussi une
+information très utile : les diff\'erences apport\'ees à vos fichiers depuis
+votre dernier commit.
+
+\newpage
+
+    \item Les commits c'est bien gentil mais on veut pouvoir partager son
+	code. Pour ça il faut \textbf{\emph{push}}. Celà va envoyer les changements de
+	votre projet sur le d\'epôt distant afin que vos co\'equipiers
+	puissent les r\'ecup\'erer.
+	Pour faire un \textbf{\emph{push}} il existe deux m\'ethodes : \\
+	
+	\begin{itemize}
+
+	    \item Tout d'abord, au lieu de faire juste un
+		\textbf{\emph{commit}}, vous
+		auriez pu faire directement un \textbf{\emph{commit and push}} pour
+		envoyer les changements appliqu\'es à votre d\'epôt local au
+		d\epôt distant d'un seul coup.\\
+ 
+	    \item Ou alors vous pouvez aller dans \textbf{\emph{Git >> push}} et
+		obtenir une fenêtre comme celle-ci :\\
+	\end{itemize}
+		\begin{center}
+		    \includegraphics[scale=0.9]{img/VS_push.png} \\
+		\end{center}
+	
+	La deuxième m\'ethode a l'avantage de vous permettre d'envoyer d'un
+	seul coup le r\'esultat de plusieurs commits d'affil\'ee sur le
+	d\'epôt distant. \\
+	Choisissez le d\'epôt et la branche sur lequel \textbf{\emph{push}}
+	puis appuyez sur \textbf{\emph{Push}}, entrez votre password
+	\textbf{Bitbucket} ou \textbf{GitHub} selon le site sur lequel vous
+	avez cr\'e\'e un compte, puis attendez. Ça ne devrait pas être très
+	long.\\
+ 
+    \item Maintenant que votre code se trouve sur le d\'epôt distant, vos
+	co\'equipiers peuvent cloner ce d\'epôt depuis votre service de
+	hosting pr\'ef\'er\'e. Pour ça aussi il devrait y avoir un gros bouton
+	pr\'evu à cet effet.\\
+ 
+    \item Cloner un d\'epôt pour r\'ecup\'erer les modifications d'un de vos
+	camarade c'est quand même pas très pratique, vous en conviendrez, pour
+	\'eviter de devoir à chaque fois cloner le d\'pôt, git a une
+	fonctionnalit\'e très pratique : \textbf{\emph{pull}}. Celà sert
+	justement à charger les 'mises à jour' du d\'epôt distant afin de ne
+    seulement t\'el\'echarger ce qui a \'et\'e modifi\'e en lieu et place du
+    d\'epôt entier.\\
+    Pour celà allez dans \textbf{\emph{Git >> pull}} pour obtenir la fenêtre
+    suivante : \\
+    \begin{center}
+	\includegraphics[scale=0.7]{img/VS_pull.png}
+    \end{center}
+\\
+S\'electionnez le d\'epôt ainsi que la branche à \textbf{\emph{pull}} puis
+cliquez sur \textbf{\emph{Pull}}. Entrez votre password si demand\'e puis
+patientez.
+\\
+\\
+Et vous voilà fin près pour travailler en toute qui\'etude !
+\end{enumerate}
 
 \section{Principe du jeu}
 
