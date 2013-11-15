@@ -26,7 +26,7 @@
 \newminted{csharp}{bgcolor=gray!25,fontsize=\normalsize,mathescape,linenos,frame=lines,framerule=0.3pt}
 
 \newcommand{\tptitle}
-    {\textbf{TP BDSP 13/14} $\bullet$ T'es triste $\bullet$ \textbf{GConfs}}
+    {\textbf{TP BDSP 13/14} $\bullet$ Tés triste $\bullet$ \textbf{GConfs}}
 
 \fancyhf{}
 \lhead{\textbf{\thepage}}
@@ -40,7 +40,7 @@
 
 % END STYLE
 
-\title{T'es triste}
+\title{Tés triste}
 
 \author{
     GConfs
@@ -56,7 +56,7 @@
     \fbox{
         \begin{minipage}[t]{6cm}
             \begin{center}
-                \textbf{\huge T'es triste} \\
+                \textbf{\huge Tés triste} \\
                 \emph{\color{red} TP BDSP 13/14}
             \end{center}
         \end{minipage}
@@ -73,7 +73,7 @@ sont de taille 3 (et non 4) et elles ne peuvent pas tourner. \\
 \end{center}
 
 Ce TP est fait pour être réalisé en équipe (2-4 membres) mais vous pouvez très
-bien le faire tout seul, si vous en êtes capable (même si c'est moins marrant).
+bien le faire tout seul, si vous en êtes capable (même si cést moins marrant).
 \\
 
 \textbf{But du TP :} apprendre à utiliser \textbf{Git} à plusieurs et apprendre
@@ -106,8 +106,8 @@ aider. Alors n'hésitez pas à leur demander.}
 
     \item L'heureux élu se rend donc sur le site que vous avez choisi et créé un
     nouveau dépôt (en général y'a un gros bouton pour ça, vous allez y
-    arriver). Editez les r\'eglages de votre d\'epôt pour ajouter vos
-    co\'equipi\'es et donnez leur au moins le droit d'\'ecriture, voire les
+    arriver). Editez les réglages de votre dépôt pour ajouter vos
+    coéquipiés et donnez leur au moins le droit d'écriture, voire les
     droits admins si vous êtes de bonne humeur. \\
 
     \item Cette même personne créé un nouveau projet XNA sur VS.
@@ -116,34 +116,29 @@ aider. Alors n'hésitez pas à leur demander.}
 \% \textbf{Git Extension in Visual Studio 2010}:\\
 \begin{enumerate}
     \item Commencez par installer le plugin Git Extension pour Visual Studio 2010 si
-celui-ci n'est pas d\'ejà install\'e. Vous devriez avoir ceci dans votre barre
+celui-ci nést pas déjà installé. Vous devriez avoir ceci dans votre barre
 de menus :
 \begin{center}
     \includegraphics{img/VS_git.png}
 \end{center}
-\\
-    \item Ensuite cr\'eez un d\'epôt local vide. Pour celà, allez dans
+    \item Ensuite créez un dépôt local vide. Pour celà, allez dans
 	\textbf{\emph{Git
 	>> Initialize new repository}}. \\
 Une fenêtre telle que celle-ci devrait s'afficher :\\
 \begin{center}
     \includegraphics{img/VS_new_repo.png}\\ 
 \end{center}
-\\
 Indiquez le chemin vers le dossier de votre projet et cliquez sur
 \textbf{\emph{Initialize}}.\\
-\\
     \item Allez dans les options de \textbf{\emph{Git Extension}} et
 	configurez votre nom et votre adresse email.
-	\\
-    \item Maintenant configurez le d\'epôt distant : Allez dans \textbf{\emph{Git >>
-	Manage remote repositories}}, et indiquez le nom du d\'epôt ainsi que
+    \item Maintenant configurez le dépôt distant : Allez dans \textbf{\emph{Git >>
+	Manage remote repositories}}, et indiquez le nom du dépôt ainsi que
 	son url dans la fenêtre suivante : \\
     \begin{center}
 	\includegraphics[scale=0.85]{img/VS_manage_remote.png} \\
     \end{center}
     Cliquez sur \textbf{\emph{Save}} puis fermez la fenêtre. \\
-    \\
  
      \item Vous allez maintenant effectuer votre premier commit. Pour celà,
 	 allez dans \textbf{\emph{Git >> Commit}}. Vous devriez obtenir une fenêtre
@@ -151,34 +146,32 @@ Indiquez le chemin vers le dossier de votre projet et cliquez sur
 	\begin{center}
 	    \includegraphics[scale=0.58]{img/VS_commit.png}
 	\end{center}
-	\\
-	Choisissez les fichiers que vous voulez commit en les s\'electionnants
+	Choisissez les fichiers que vous voulez commit en les sélectionnants
 	et en cliquant sur \textbf{\emph{Stage}}. 
-	\\
-	Entrez un message de commit, ce message sera affich\'e avec le commit dans votre repo, il vous permet d'indiquer quels sont les changements apport\'es à votre projet depuis le dernier commit. 
-	\\
+	Entrez un message de commit, ce message sera affiché avec le commit dans votre repo, il vous permet d'indiquer quels sont les changements apportés à votre projet depuis le dernier commit. \\
+
 	Comme il s'agit ici du premier commit de votre projet, vous
-pouvez mettre ce que vous voulez en message. 
-\\
+pouvez mettre ce que vous voulez en message. \\
+
 Cette fenêtre comporte aussi une
-information très utile : les diff\'erences apport\'ees à vos fichiers depuis
+information très utile : les différences apportées à vos fichiers depuis
 votre dernier commit.
 
 \newpage
 
-    \item Les commits c'est bien gentil mais on veut pouvoir partager son
+    \item Les commits cést bien gentil mais on veut pouvoir partager son
 	code. Pour ça il faut \textbf{\emph{push}}. Celà va envoyer les changements de
-	votre projet sur le d\'epôt distant afin que vos co\'equipiers
-	puissent les r\'ecup\'erer.
-	Pour faire un \textbf{\emph{push}} il existe deux m\'ethodes : \\
+	votre projet sur le dépôt distant afin que vos coéquipiers
+	puissent les récupérer.
+	Pour faire un \textbf{\emph{push}} il existe deux méthodes : \\
 	
 	\begin{itemize}
 
 	    \item Tout d'abord, au lieu de faire juste un
 		\textbf{\emph{commit}}, vous
 		auriez pu faire directement un \textbf{\emph{commit and push}} pour
-		envoyer les changements appliqu\'es à votre d\'epôt local au
-		d\epôt distant d'un seul coup.\\
+		envoyer les changements appliqués à votre dépôt local au
+		dépôt distant d'un seul coup.\\
  
 	    \item Ou alors vous pouvez aller dans \textbf{\emph{Git >> push}} et
 		obtenir une fenêtre comme celle-ci :\\
@@ -187,39 +180,38 @@ votre dernier commit.
 		    \includegraphics[scale=0.9]{img/VS_push.png} \\
 		\end{center}
 	
-	La deuxième m\'ethode a l'avantage de vous permettre d'envoyer d'un
-	seul coup le r\'esultat de plusieurs commits d'affil\'ee sur le
-	d\'epôt distant. \\
-	Choisissez le d\'epôt et la branche sur lequel \textbf{\emph{push}}
+	La deuxième méthode a l'avantage de vous permettre dénvoyer d'un
+	seul coup le résultat de plusieurs commits d'affilée sur le
+	dépôt distant. \\
+	Choisissez le dépôt et la branche sur lequel \textbf{\emph{push}}
 	puis appuyez sur \textbf{\emph{Push}}, entrez votre password
 	\textbf{Bitbucket} ou \textbf{GitHub} selon le site sur lequel vous
-	avez cr\'e\'e un compte, puis attendez. Ça ne devrait pas être très
+	avez créé un compte, puis attendez. Ça ne devrait pas être très
 	long.\\
  
-    \item Maintenant que votre code se trouve sur le d\'epôt distant, vos
-	co\'equipiers peuvent cloner ce d\'epôt depuis votre service de
-	hosting pr\'ef\'er\'e. Pour ça aussi il devrait y avoir un gros bouton
-	pr\'evu à cet effet.\\
+    \item Maintenant que votre code se trouve sur le dépôt distant, vos
+	coéquipiers peuvent cloner ce dépôt depuis votre service de
+	hosting préféré. Pour ça aussi il devrait y avoir un gros bouton
+	prévu à cet effet.\\
  
-    \item Cloner un d\'epôt pour r\'ecup\'erer les modifications d'un de vos
-	camarade c'est quand même pas très pratique, vous en conviendrez, pour
-	\'eviter de devoir à chaque fois cloner le d\'pôt, git a une
-	fonctionnalit\'e très pratique : \textbf{\emph{pull}}. Celà sert
-	justement à charger les 'mises à jour' du d\'epôt distant afin de ne
-    seulement t\'el\'echarger ce qui a \'et\'e modifi\'e en lieu et place du
-    d\'epôt entier.\\
+    \item Cloner un dépôt pour récupérer les modifications d'un de vos
+	camarade cést quand même pas très pratique, vous en conviendrez, pour
+	éviter de devoir à chaque fois cloner le dépôt, git a une
+	fonctionnalité très pratique : \textbf{\emph{pull}}. Celà sert
+	justement à charger les 'mises à jour' du dépôt distant afin de ne
+    seulement télécharger ce qui a été modifié en lieu et place du
+    dépôt entier.\\
     Pour celà allez dans \textbf{\emph{Git >> pull}} pour obtenir la fenêtre
     suivante : \\
     \begin{center}
 	\includegraphics[scale=0.7]{img/VS_pull.png}
     \end{center}
-\\
-S\'electionnez le d\'epôt ainsi que la branche à \textbf{\emph{pull}} puis
-cliquez sur \textbf{\emph{Pull}}. Entrez votre password si demand\'e puis
-patientez.
-\\
-\\
-Et vous voilà fin près pour travailler en toute qui\'etude !
+
+Sélectionnez le dépôt ainsi que la branche à \textbf{\emph{pull}} puis
+cliquez sur \textbf{\emph{Pull}}. Entrez votre password si demandé puis
+patientez. \\
+
+Et vous voilà fin près pour travailler en toute quiétude !
 \end{enumerate}
 
 \section{Principe du jeu}
@@ -286,13 +278,13 @@ Pour charger des images et les mettres sous forme de textures, XNA se sert d'un
 objet appelé le 'ContentManager' : \\
 
 \begin{csharpcode}
-// Vous remarquerez qu'il n'y a pas l'extension sur le nom du fichier
+// Vous remarquerez qu'il n'y a pas léxtension sur le nom du fichier
 Texture2D MaTexture = content.Load<SpriteFont>("MonFicher");
 \end{csharpcode}
 
 \vspace{0.2cm}
 
-Ce qu'on va faire, c'est créer une sorte de 'service', une classe statique qui
+Ce qu'on va faire, cést créer une sorte de 'service', une classe statique qui
 va contenir nos textures, à laquelle on aura accès depuis n'importe quelle
 classe de notre solution (projet). \\
 
@@ -352,7 +344,7 @@ Pour chaque case on a envie de savoir si la case est occupée par soit :
 (on différencie pièce bloquée et non-bloquée car on veut les afficher
 différemment). \\
 
-Le plus simple c'est de représenter les cases notre plateau par un tableau de
+Le plus simple cést de représenter les cases notre plateau par un tableau de
 bytes : \\
 
 \begin{csharpcode*}{label=Plate.cs}
@@ -374,7 +366,7 @@ byte b = p.Cells[0,0]; // récupère la case tout en haut à gauche
 
 \vspace{0.2cm}
 
-Pour parcourir l'ensemble de nos cases, il suffit de faire : \\
+Pour parcourir lénsemble de nos cases, il suffit de faire : \\
 
 \begin{csharpcode}
 for (int x = 0; x < 10; x++)
@@ -410,7 +402,7 @@ public class Plate
 
 \noindent\textbf{N.B} : la taille de la texture de l'image est de 22x22. \\
 
-\textbf{Rappel} : pour dessiner une texture avec XNA, c'est : \\
+\textbf{Rappel} : pour dessiner une texture avec XNA, cést : \\
 
 \begin{csharpcode}
 spriteBatch.Draw(MaTexture2D, new Vector2(x, y), Color.White);
@@ -451,8 +443,8 @@ On peut considérer qu'une pièce est un ensemble de 3 blocs. Chaque bloc a des
 coordonnées qui lui sont propres sur la map, soit un couple $(x,y)$. \\
 
 Pour plus de clarté, on va déclarer une structure (si vous ne savez pas ce que
-c'est, considérez que c'est un peu comme les enregistrements en OCaml. Si vous
-ne voyez toujours pas, considérez que c'est une classe) : \\
+cést, considérez que cést un peu comme les enregistrements en OCaml. Si vous
+ne voyez toujours pas, considérez que cést une classe) : \\
 
 \begin{csharpcode*}{label=Piece.cs}
 public class Piece
@@ -515,7 +507,7 @@ public class Piece
 
 Pour déplacer la pièce on va :
 \begin{itemize}
-    \item d'abord l'enlever du plateau (mettre les bytes de ses cases à 0)
+    \item d'abord lénlever du plateau (mettre les bytes de ses cases à 0)
     \item calculer les nouvelles coordonnées de ses cases
     \item la remettre sur le plateau (passer les bytes de ses cases à 1)
 \end{itemize}
@@ -606,7 +598,7 @@ public class Game1
     // On va avoir besoin de compter le nombre de fois qu'on passe sur la
     // fonction Update(), pour bouger la pièce automatiquement vers le bas
     // à partir d'un certain nombre de fois. (Si on le fait à chaque Update()
-    // ça le fera plusieurs fois par seconde et c'est beaucoup trop. On veut
+    // ça le fera plusieurs fois par seconde et cést beaucoup trop. On veut
     // contrôler ça)
     private int _timer;
 
@@ -674,20 +666,20 @@ public class Game1
 
     protected override void Update(GameTime gameTime)
     {
-        // TODO: vérifier que l'état de la partie n'est pas à GameOver
-        //       Si c'est le cas, retourner (return;)
+        // TODO: vérifier que l'état de la partie nést pas à GameOver
+        //       Si cést le cas, retourner (return;)
 
         // Vérifier que le joueur n'appuie pas sur 'flèche gauche' ou
-        // 'flèche droite'. Si c'est le cas, on bouge la pièce en conséquence.
+        // 'flèche droite'. Si cést le cas, on bouge la pièce en conséquence.
 
         // TODO: Incrémenter le _timer
 
         // TODO: Si (_timer == 20) et que la pièce peut descendre vers le bas,
         //          on la descend.
         //       Sinon, on bloque la pièce, on vérifie qu'il n'y a pas de ligne
-        //          pleine. Si c'est le cas on les explose (récursivement, il peut
+        //          pleine. Si cést le cas on les explose (récursivement, il peut
         //          y avoir plusieurs lignes pleines en même temps (max 3)
-        //       Et on vérifie que la partie n'est pas terminée. Si c'est le cas
+        //       Et on vérifie que la partie nést pas terminée. Si cést le cas
         //          on passe _gameState à GameState.GameOver
     }
 
